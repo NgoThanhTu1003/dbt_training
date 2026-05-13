@@ -1,6 +1,5 @@
 
 
-
 -- SELECT first_name FROM dbt_ntu.Customer 
 
 With stg_customers AS (
@@ -9,7 +8,7 @@ With stg_customers AS (
         CONCAT(first_name, ' ', last_name) AS customer_name,
         email AS email_address,
         address AS billing_address
-    FROM dbt_ntu.Customer
+    FROM raw.Customer
 
 )
 
