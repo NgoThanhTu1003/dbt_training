@@ -1,9 +1,16 @@
-WITH stg_customers AS (
-    SELECT customer_id, 
-    CONCAT(first_name, ' ', last_name) AS customer_name,
-    email AS email_address,
-    adress AS billing_address
-    FROM raw.customer
+
+
+
+-- SELECT first_name FROM dbt_ntu.Customer 
+
+With stg_customers AS (
+    SELECT 
+        customer_id,
+        CONCAT(first_name, ' ', last_name) AS customer_name,
+        email AS email_address,
+        address AS billing_address
+    FROM dbt_ntu.Customer
+
 )
 
 SELECT * FROM stg_customers
